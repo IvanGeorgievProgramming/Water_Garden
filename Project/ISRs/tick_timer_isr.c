@@ -15,8 +15,8 @@ void TIM3_IRQHandler(void){
     static bool end_warm_measurements = TRUE, end_cold_measurements = TRUE;
     float  time_warm, time_cold;
     
-    if(impulses_cold_speed > 0){
-        impulses_warm = impulses_cold_speed - impulses_warm;
+    if(impulses_warm_speed > 0){
+        impulses_warm = impulses_warm_speed - impulses_warm;
         warm_entries++;
 
         if(warm_entries > 1){
@@ -27,9 +27,9 @@ void TIM3_IRQHandler(void){
             else if(Seconds_sys_tick_warm < First_sys_tick_warm)
                 time_warm = (float)(Seconds_sys_tick_warm - First_sys_tick_warm) / 1000;
 
-            speed_cold_water = ((float)impulses_warm / (float)Water_meter_const) / time_warm;
+            speed_warm_water = ((float)impulses_warm / (float)Water_meter_const) / time_warm;
 
-            impulses_cold_speed = 0;
+            impulses_warm_speed = 0;
             impulses_warm = 0;
             First_sys_tick_warm = Seconds_sys_tick_warm;
         }else if(warm_entries == 1) First_sys_tick_warm = GetSysTickTimer_ms();   
@@ -37,7 +37,7 @@ void TIM3_IRQHandler(void){
     }else{
         if(++zero_warm_speed_cnt == 3){
             zero_warm_speed_cnt = 0;
-            speed_cold_water = 0;
+            speed_warm_water = 0;
             warm_entries = 0;
             if(Data_Water_Expense.full_struct == FALSE && end_warm_measurements == FALSE){
                 end_warm_measurements = TRUE;

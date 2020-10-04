@@ -19,14 +19,14 @@
 
 // WaterMeter Optic
 #define OPTIC_PWM_Port          GPIOA
-#define DataIn_Port             GPIOA//GPIOB
+#define DataIn_Port             GPIOA
 #define OPTIC_Pwm_Pin           GPIO_Pin_0  // OPTIC_PWM OUT    see:  timer_oc.TIM_OCMode = TIM_OCMode_PWM1;
 
-#define OPTIC_DataWarm_Pin      GPIO_Pin_0  // OPTIC_Warm_Data IN
-#define HAL_DataWarm_Pin        GPIO_Pin_4  // HAL_Warm_Data IN
+#define OPTIC_DataWarm_Pin      GPIO_Pin_2  // OPTIC_Warm_Data IN
+#define HAL_DataWarm_Pin        GPIO_Pin_3  // HAL_Warm_Data IN
 
-#define OPTIC_DataCold_Pin      GPIO_Pin_4//GPIO_PIN_6  // OPTIC_Cold_Data IN
-#define HAL_DataCold_Pin        GPIO_Pin_5//GPIO_PIN_8  // HAL_Cold_Data IN
+#define OPTIC_DataCold_Pin      GPIO_Pin_4  // OPTIC_Cold_Data IN
+#define HAL_DataCold_Pin        GPIO_Pin_5  // HAL_Cold_Data IN
 
 ////////////////////////////////////////////////////////////////////////////////
 #define MENU_Pin                (!PIN_GET(BUTTON_Port, MENU_Button_Pin))

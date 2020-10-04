@@ -60,11 +60,8 @@ void GPIOs_Init(void){
     PIN_CONFIG(BUTTON_Port, DOWN_Button_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // Button DOWN input
 
     PIN_CONFIG(OPTIC_PWM_Port, OPTIC_Pwm_Pin, GPIO_Mode_AF_PP, GPIO_Speed_50MHz); // OPTIC_PWM Out
-    //PIN_CONFIG(DataIn_Port, OPTIC_DataWarm_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // OPTIC_Warm_Data IN
-    //PIN_CONFIG(DataIn_Port, HAL_DataWarm_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // HAL_Warm_Data IN
-    PIN_CONFIG(GPIOB, OPTIC_DataWarm_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // OPTIC_Warm_Data IN
-    PIN_CONFIG(GPIOB, HAL_DataWarm_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // HAL_Warm_Data IN
-
+    PIN_CONFIG(DataIn_Port, OPTIC_DataWarm_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // OPTIC_Warm_Data IN
+    PIN_CONFIG(DataIn_Port, HAL_DataWarm_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // HAL_Warm_Data IN
     PIN_CONFIG(DataIn_Port, OPTIC_DataCold_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // OPTIC_Cold_Data IN
     PIN_CONFIG(DataIn_Port, HAL_DataCold_Pin, GPIO_Mode_IPU, GPIO_Speed_50MHz); // HAL_Cold_Data IN
 
